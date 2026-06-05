@@ -19,11 +19,19 @@ const skillCategories = [
   },
   {
     title: "Habilidades Blandas",
-    skills: ["Resolución de problemas", "Aprendizaje autónomo", "Trabajo en equipo"],
+    skills: [
+      "Resolución de problemas",
+      "Aprendizaje autónomo",
+      "Trabajo en equipo",
+      "Comunicación efectiva",
+      "Adaptabilidad",
+      "Pensamiento crítico",
+      "Inglés B2",
+    ],
   },
   {
     title: "Idiomas",
-    skills: ["Español (Nativo)", "Inglés B2 (Certificado EF)"],
+    skills: ["Español (Nativo)", "Inglés (B2)"],
   },
 ]
 

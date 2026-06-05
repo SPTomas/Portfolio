@@ -65,9 +65,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
 
         <p className="text-muted-foreground mt-4">{project.description}</p>
 
-        {/* Always-visible tags preview */}
+        {/* Tags: preview when collapsed, full list when expanded */}
         <div className="flex flex-wrap gap-2 mt-6">
-          {project.tags.slice(0, 4).map((tag) => (
+          {(expanded ? project.tags : project.tags.slice(0, 4)).map((tag) => (
             <span
               key={tag}
               className="text-xs font-mono px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
@@ -91,7 +91,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         >
           <div className="overflow-hidden">
             <h4 className="text-sm font-medium text-foreground mb-3">Características principales:</h4>
-            <ul className="grid md:grid-cols-2 gap-2 mb-6">
+            <ul className="grid md:grid-cols-2 gap-2">
               {project.features.map((feature, featureIndex) => (
                 <li
                   key={featureIndex}
@@ -102,18 +102,6 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
                 </li>
               ))}
             </ul>
-            {project.tags.length > 4 && (
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-mono px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         </div>
 
