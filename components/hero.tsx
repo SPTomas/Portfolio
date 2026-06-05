@@ -1,70 +1,75 @@
-import { Mail } from "lucide-react"
-
-function GithubIcon({ size = 24 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-    </svg>
-  )
-}
+import { Mail, ArrowDown } from "lucide-react"
 
 function LinkedinIcon({ size = 24 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
     </svg>
   )
 }
 
 export function Hero() {
   return (
-    <section id="about" className="min-h-screen flex items-center pt-20">
+    <section id="about" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Animated background accents */}
+      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-primary/15 blur-3xl animate-float-slow" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl animate-float-slow-reverse" />
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
+
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-3xl">
-          <p className="text-primary font-mono text-sm mb-4">Hola, soy</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Suarez Paez, Tomas
+          <p className="text-primary font-mono text-sm mb-4 animate-fade-in-up [animation-delay:0ms]">
+            Hola, soy
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance animate-fade-in-up [animation-delay:120ms]">
+            <span className="text-shimmer">Suarez Paez, Tomas</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed text-pretty">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed text-pretty animate-fade-in-up [animation-delay:240ms]">
             Analista Desarrollador Universitario en Sistemas de Información egresado de la{" "}
-            <span className="text-foreground font-medium">UTN FRC</span>, estudiando actualmente 
+            <span className="text-foreground font-medium">UTN FRC</span>, estudiando actualmente
             Ingeniería en Sistemas. Experiencia práctica en desarrollo full-stack mediante proyecto
             de tesis (Analista) con tecnologías modernas, metodología{" "}
             <span className="text-foreground font-medium">Scrum</span> e inglés{" "}
             <span className="text-primary font-medium">B2</span> certificado por EF.
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 animate-fade-in-up [animation-delay:360ms]">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
+              className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25"
             >
-              <Mail size={18} />
+              <Mail size={18} className="transition-transform group-hover:scale-110" />
               Contactar
             </a>
-            <div className="flex items-center gap-4">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="GitHub"
-              >
-                <GithubIcon size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/tomas-ticiano-suarez-paez-22b5582b7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon size={24} />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/tomas-ticiano-suarez-paez-22b5582b7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground transition-all hover:text-primary hover:-translate-y-0.5"
+              aria-label="LinkedIn"
+            >
+              <LinkedinIcon size={24} />
+            </a>
           </div>
         </div>
       </div>
+
+      <a
+        href="#projects"
+        aria-label="Ir a proyectos"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce-subtle"
+      >
+        <ArrowDown size={24} />
+      </a>
     </section>
   )
 }
