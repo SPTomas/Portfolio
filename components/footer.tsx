@@ -1,3 +1,5 @@
+import { Heart } from "lucide-react"
+
 function LinkedinIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -41,11 +43,16 @@ export function Footer() {
     <footer className="py-10 border-t border-border">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground text-center md:text-left">
-            © {new Date().getFullYear()} Suarez Paez, Tomas Ticiano. Todos los derechos reservados.
+          <p className="text-sm text-muted-foreground text-center md:text-left inline-flex items-center gap-1.5">
+            Hecho con
+            <Heart
+              size={15}
+              className="text-primary fill-primary animate-heartbeat"
+              aria-label="amor"
+            />
+            · Todos los derechos reservados © {new Date().getFullYear()}
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">Suarez Paez, Tomas Ticiano</span>
             <a
               href="https://www.linkedin.com/in/tomas-ticiano-suarez-paez-22b5582b7/"
               target="_blank"

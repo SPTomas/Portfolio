@@ -1,4 +1,4 @@
-import { Mail, ArrowDown } from "lucide-react"
+import { Mail, ArrowDown, Download } from "lucide-react"
 
 function LinkedinIcon({ size = 24 }: { size?: number }) {
   return (
@@ -42,13 +42,21 @@ export function Hero() {
             <span className="text-primary font-medium">B2</span> certificado por EF.
           </p>
 
-          <div className="flex items-center gap-6 animate-fade-in-up [animation-delay:360ms]">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 animate-fade-in-up [animation-delay:360ms]">
             <a
               href="#contact"
               className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25"
             >
               <Mail size={18} className="transition-transform group-hover:scale-110" />
               Contactar
+            </a>
+            <a
+              href="/cv-tomas-suarez-paez.pdf"
+              download
+              className="group inline-flex items-center gap-2 border border-border text-foreground px-6 py-3 rounded-lg font-medium transition-all hover:border-primary hover:text-primary hover:-translate-y-0.5"
+            >
+              <Download size={18} className="transition-transform group-hover:translate-y-0.5" />
+              Descargar CV
             </a>
             <a
               href="https://www.linkedin.com/in/tomas-ticiano-suarez-paez-22b5582b7/"
